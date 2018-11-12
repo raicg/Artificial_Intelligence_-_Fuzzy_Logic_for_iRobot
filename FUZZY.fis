@@ -1,0 +1,83 @@
+[System]
+Name='FUZZY'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sensorfrontal'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='medio':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Input2]
+Name='sensordireita'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='medio':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Input3]
+Name='sensoresquerda'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='medio':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Output1]
+Name='veldireita'
+Range=[-0.5 0.5]
+NumMFs=4
+MF1='lento':'trapmf',[-0.7 -0.5 -0.35 -0.2]
+MF2='meio-baixo':'trimf',[-0.3 -0.2 -0.1]
+MF3='meio-alto':'trimf',[0.1 0.2 0.3]
+MF4='rapido':'trapmf',[0.2 0.4 0.5 0.8]
+
+[Output2]
+Name='velesquerda'
+Range=[-0.5 0.5]
+NumMFs=4
+MF1='lento':'trapmf',[-0.7 -0.5 -0.4 -0.2]
+MF2='meio-baixo':'trimf',[-0.3 -0.2 -0.1]
+MF3='meio-alto':'trimf',[0.1 0.2 0.3]
+MF4='rapido':'trapmf',[0.2 0.4 0.5 0.8]
+
+[Rules]
+1 1 1, 1 4 (1) : 1
+1 1 2, 2 1 (1) : 1
+1 2 1, 1 2 (1) : 1
+2 1 1, 3 3 (1) : 1
+2 1 2, 3 2 (1) : 1
+2 2 1, 2 3 (1) : 1
+1 2 2, 3 1 (1) : 1
+2 2 2, 3 3 (1) : 1
+3 1 1, 4 4 (1) : 1
+1 3 1, 1 2 (1) : 1
+1 1 3, 2 1 (1) : 1
+3 1 3, 4 3 (1) : 1
+3 3 1, 3 4 (1) : 1
+3 3 3, 4 4 (1) : 1
+1 2 3, 2 1 (1) : 1
+1 3 2, 1 2 (1) : 1
+2 1 3, 3 2 (1) : 1
+3 1 2, 4 3 (1) : 1
+3 2 1, 3 4 (1) : 1
+2 3 1, 2 3 (1) : 1
+2 2 3, 3 2 (1) : 1
+2 3 2, 2 3 (1) : 1
+3 2 3, 4 3 (1) : 1
+1 3 3, 1 2 (1) : 1
+3 2 2, 4 4 (1) : 1
+2 2 3, 4 3 (1) : 1
+2 3 2, 3 4 (1) : 1
